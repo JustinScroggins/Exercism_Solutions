@@ -26,7 +26,7 @@ public static class Pangram
                 // and if so, setting the value pair for it to false
                 if (dictionaryAlphabet.ContainsKey(letter.ToString()))
                 {
-                    dictionaryAlphabet[letter.ToString()] = false;
+                    dictionaryAlphabet[letter.ToString()] = true;
                 }
             }
             
