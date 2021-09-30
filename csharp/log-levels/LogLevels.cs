@@ -24,7 +24,7 @@ static class LogLine
         {
             return "warning";
         }
-        else return "invalid";
+        else return "info";
     }
 
     public static string Reformat(string logLine)
