@@ -33,6 +33,9 @@ static class LogLine
         foreach (var log in logs)
         {
             string errorType = log[0].ToString();
+            string errorBody = log[1].ToString();
+            return ($"{errorBody} ({errorType})");
         }
+        return $"EOL";
     }
 }
