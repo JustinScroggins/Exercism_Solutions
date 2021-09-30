@@ -9,7 +9,7 @@ static class LogLine
         foreach (var log in logs.Skip(0))
         {
 
-            var trimLog = log.Trim();
+            var trimLog = log.TrimStart();
             return trimLog;
         }
         return "EOL";
