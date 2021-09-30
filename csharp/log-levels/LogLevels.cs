@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 
-string trimStart = string.Empty;
 static class LogLine
 {
     public static string Message(string logLine)
@@ -22,12 +21,8 @@ static class LogLine
     public static string Reformat(string logLine)
     {
         string[] logs = logLine.Split(":");
-        foreach (var log in logs)
-        {
-            string errorType = log[0].ToString();
-            string errorBody = log[1].ToString();
-            return ($"{errorBody} ({errorType})");
-        }
-        return $"EOL";
+        string logType = LogLevel(logLine);
+        string formatted = $"{logs[1].Trim()} ({logType})";
+        return formatted;
     }
 }
