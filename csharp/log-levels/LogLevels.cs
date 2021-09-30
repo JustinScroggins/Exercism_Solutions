@@ -1,32 +1,22 @@
 using System;
 using System.Linq;
 
+string trimStart = string.Empty;
 static class LogLine
 {
     public static string Message(string logLine)
     {
         string[] logs = logLine.Split(":");
-
-        // Target the collection not each instance
-            
-            var trimLog = logs[1].ToString().Trim();
-
+        var trimLog = logs[1].ToString().Trim();
         return trimLog;
     }
 
     public static string LogLevel(string logLine)
     {
         string[] logs = logLine.Split(":");
-        // Trim out the text inside the brackets
-        if (logs[0].Contains("[ERROR]"))
-        {
-            return "error";
-        }
-        else if (logs[0].Contains("[WARNING]"))
-        {
-            return "warning";
-        }
-        else return "info";
+        logs[0] = logs[0].TrimStart('[');
+        logs[0] = logs[0].TrimEnd(']');
+        return logs[0].ToLower();
     }
 
     public static string Reformat(string logLine)
