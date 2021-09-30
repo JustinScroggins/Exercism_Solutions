@@ -6,17 +6,18 @@ static class LogLine
     public static string Message(string logLine)
     {
         string[] logs = logLine.Split(":");
-        foreach (var log in logs.Skip(0))
-        {
-            var trimLog = log[1].ToString().Trim();
-            return trimLog;
-        }
-        return "EOL";
+
+        // Target the collection not each instance
+            
+            var trimLog = logs[1].ToString().Trim();
+
+        return trimLog;
     }
 
     public static string LogLevel(string logLine)
     {
         string[] logs = logLine.Split(":");
+        // Trim out the text inside the brackets
         if (logs[0].Contains("[ERROR]"))
         {
             return "error";
