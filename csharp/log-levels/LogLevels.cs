@@ -8,7 +8,9 @@ static class LogLine
         string[] logs = logLine.Split(":");
         foreach (var log in logs.Skip(0))
         {
-            return log;
+
+            var trimLog = log.Trim();
+            return trimLog;
         }
         return "EOL";
     }
