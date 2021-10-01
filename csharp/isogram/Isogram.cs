@@ -9,7 +9,9 @@ public static class Isogram
         if (word.Length < 1)
         {
             return true;
+
         }
+
         Dictionary<string, bool> alphabet = new Dictionary<string, bool>();
         string alphabetString = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
         string[] formattedAlphabet = alphabetString.Split(",");
@@ -17,6 +19,7 @@ public static class Isogram
         {
             alphabet.Add(letter, false);
         }
+
         foreach (char letter in word)
         {
             if (alphabet.ContainsKey(letter.ToString()))
