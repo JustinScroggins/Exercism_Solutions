@@ -9,8 +9,8 @@ public static class Isogram
     {
         word = word.ToLower();
         string wordFormatted = new string(word.Where(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)).ToArray());
-        wordFormatted = wordFormatted.Trim();
-        var multipleLetters = wordFormatted.GroupBy(x => x)
+        string trimmed = String.Concat(wordFormatted.Where(c => !Char.IsWhiteSpace(c)));
+        var multipleLetters = trimmed.GroupBy(x => x)
             .Where(g => g.Count() > 1)
             .Select(g => g.Key).ToList();
         if (multipleLetters.Count > 0) return false;
