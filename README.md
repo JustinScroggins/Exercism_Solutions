@@ -3,7 +3,7 @@
 
 - 🔭 I’m currently working on [Exercism_Solutions](https://github.com/JustinScroggins/Exercism_Solutions/new/main?readme=1) (this project)
 
-- 🌱 I’m currently learning **Data Structures & Algorithms, Design Patterns**
+- 🌱 I’m currently learning **Data Structures & Algorithms, Design Patterns, and LINQ**
 
 - 💬 Ask me about **C#, ASP.NET, HTML/CSS, Bootstrap, Entity Framework**
 
