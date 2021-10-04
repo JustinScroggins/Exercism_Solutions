@@ -4,11 +4,15 @@ public class Player
 {
     public int RollDie()
     {
-        throw new NotImplementedException("Please implement the Player.RollDie() method");
+        Random rnd = new Random();
+        int random = rnd.Next(1, 18);
+        return random;
     }
 
     public double GenerateSpellStrength()
     {
-        throw new NotImplementedException("Please implement the Player.GenerateSpellStrength() method");
+        Random rnd = new Random();
+        int strength = rnd.Next(0, 100);
+        return (double) strength;
     }
 }
