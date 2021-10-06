@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneNumberAnalysis", "PhoneNumberAnalysis.csproj", "{2B271020-58AD-491E-A3A4-41EFED3C4D76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneNumberAnalysis", "PhoneNumberAnalysis.csproj", "{628C161D-7D1A-41DC-88CE-CC04CD581500}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2B271020-58AD-491E-A3A4-41EFED3C4D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B271020-58AD-491E-A3A4-41EFED3C4D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B271020-58AD-491E-A3A4-41EFED3C4D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B271020-58AD-491E-A3A4-41EFED3C4D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{628C161D-7D1A-41DC-88CE-CC04CD581500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{628C161D-7D1A-41DC-88CE-CC04CD581500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{628C161D-7D1A-41DC-88CE-CC04CD581500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{628C161D-7D1A-41DC-88CE-CC04CD581500}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C087D6B9-6F39-40F7-BB10-57BB7DEAB647}
+		SolutionGuid = {C5BFD232-6AEA-4B00-AFB5-CB0EC53F3F51}
 	EndGlobalSection
 EndGlobal

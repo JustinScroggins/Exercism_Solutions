@@ -1,13 +1,24 @@
 using System;
 
+
 public static class PhoneNumber
 {
     public static (bool IsNewYork, bool IsFake, string LocalNumber) Analyze(string phoneNumber)
     {
-        string formattedNumber = phoneNumber.Trim('-');
-        if (formattedNumber.Contains("555"))
+        string newYorkCity = "212";
+        string fakeNumber = "555";
+        string areaCode = phoneNumber.Substring(0, 3);
+        string secondDigits = phoneNumber.Substring(4, 3);
+        string lastFour = phoneNumber.Substring(8, 4);
+        bool IsNewYork;
+        bool IsFake;
+        if (areaCode == newYorkCity)
         {
-            return (false, true, "1234");
+            IsNewYork = true;
+        }
+        if (secondDigits == fakeNumber)
+        {
+            IsFake = true;
         }
     }
 
