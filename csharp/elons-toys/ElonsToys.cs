@@ -26,6 +26,10 @@ class RemoteControlCar
 
     public void Drive()
     {
+        if (BatteryLife == 0)
+        {
+            return;
+        }
         BatteryLife--;
         DistanceDriven += 20;
     }
