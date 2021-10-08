@@ -24,7 +24,11 @@ class BirdCount
 
     public void IncrementTodaysCount()
     {
-        throw new NotImplementedException("Please implement the BirdCount.IncrementTodaysCount() method");
+        int today = Today();
+        today++;
+
+        birdsPerDay[^1] += 1;
+
     }
 
     public bool HasDayWithoutBirds()
