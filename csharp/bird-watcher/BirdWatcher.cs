@@ -43,15 +43,22 @@ class BirdCount
 
     public int CountForFirstDays(int numberOfDays)
     {
-        int birdsPerDay[numberOfDays];
-        for (int i = 0; i < birdsPerDay[numberOfDays]; i++)
-        {
-
-        }
+        //int birdsPerDay[numberOfDays];
+        //for (int i = 0; i < birdsPerDay[numberOfDays]; i++)
+        // still implementing
+        return 0;
     }
 
     public int BusyDays()
     {
-        throw new NotImplementedException("Please implement the BirdCount.BusyDays() method");
+        int busyDays = 0;
+        foreach (int day in birdsPerDay)
+        {
+            if (day >= 5)
+            {
+                busyDays++;
+            }
+        }
+        return busyDays;
     }
 }
