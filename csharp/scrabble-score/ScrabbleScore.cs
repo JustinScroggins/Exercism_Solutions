@@ -1,9 +1,24 @@
 using System;
 
+public enum ScrabbleLetters
+{
+    A, E, I, O, U, L, N, R, S, T = 1,
+    D, G = 2,
+    B, C, M, P = 3,
+    F, H, V, W, Y = 4,
+    K = 5,
+    J, X = 8,
+    Q, Z = 10
+}
 public static class ScrabbleScore
 {
     public static int Score(string input)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        int score = 0;
+        char[] letters = input.ToCharArray();
+        foreach (char letter in letters)
+        {
+            score = *(input(letter)) - 'A';
+        }
     }
 }
