@@ -26,19 +26,28 @@ class BirdCount
     {
         int today = Today();
         today++;
-
         birdsPerDay[^1] += 1;
-
     }
 
     public bool HasDayWithoutBirds()
     {
-        throw new NotImplementedException("Please implement the BirdCount.HasDayWithoutBirds() method");
+        foreach (int day in birdsPerDay)
+        {
+            if (day == 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int CountForFirstDays(int numberOfDays)
     {
-        throw new NotImplementedException("Please implement the BirdCount.CountForFirstDays() method");
+        int birdsPerDay[numberOfDays];
+        for (int i = 0; i < birdsPerDay[numberOfDays]; i++)
+        {
+
+        }
     }
 
     public int BusyDays()
