@@ -1,6 +1,6 @@
 using System;
 
-public enum ScrabbleLetters
+public enum Letters
 {
     A, E, I, O, U, L, N, R, S, T = 1,
     D, G = 2,
@@ -18,7 +18,12 @@ public static class ScrabbleScore
         char[] letters = input.ToCharArray();
         foreach (char letter in letters)
         {
-            score = *(input(letter)) - 'A';
+            bool isMatch = Enum.IsDefined(typeof(Letters), letter.ToString());
+            if (isMatch)
+            {
+                score += (int)Letters[letter];
+            }
         }
+        return score;
     }
 }
