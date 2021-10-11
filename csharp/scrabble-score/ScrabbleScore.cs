@@ -12,6 +12,13 @@ public static class ScrabbleScore
     public static string EightPoints { get; } = "j,x";
     public static string TenPoints { get; } = "q,z";
 
+    public static string[] Letters 
+
+    public static void SplitStrings()
+    {
+        string[] letters;
+
+    }
     public static int Score(string input)
     {
         int score = 0;
