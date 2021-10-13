@@ -1,31 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public static class ResistorColor
 {
     public enum Color { Black, Brown, Red, Orange, Yellow, Green, Blue, Violet, Grey, White }
     public static int ColorCode(string color)
     {
-        color = color.ToLower();
+        int count = 0;
         foreach (int colorNumber in Enum.GetValues(typeof(Color)))
         {
-            if (color == colorNumber.ToString())
+            var colorName = colorNumber.ToString();
+            if (color == colorName)
             {
-                return colorNumber;
+                return count;
             }
+            count++;
         }
         return 0;
     }
 
     public static string[] Colors()
     {
-        foreach (string colorName in Enum.GetValues(typeof(Color)))
+        List<string> colors = new List<string>();
+        foreach (int colorNumber in Enum.GetValues(typeof(Color)))
         {
-            List<string> colors = new List<string>();
-            colors.Add(colorName);
-            var colorArray = colors.ToArray();
-            return colorArray;
+            string name = ((Color)colorNumber).ToString();
+            colors.Add(name.ToLower());
         }
-        return null;
+        var colorArray = colors.ToArray();
+        return colorArray;
     }
+
 }
