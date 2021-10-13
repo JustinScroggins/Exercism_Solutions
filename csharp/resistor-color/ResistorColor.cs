@@ -8,16 +8,16 @@ public static class ResistorColor
     public static int ColorCode(string color)
     {
         int count = 0;
-        foreach (int colorNumber in Enum.GetValues(typeof(Color)))
+        List<string> colors = GetColorsAsString();
+        foreach (string c in colors)
         {
-            var colorName = colorNumber.ToString();
-            if (color == colorName)
+            if (color == c.ToLower())
             {
                 return count;
             }
             count++;
         }
-        return 0;
+        return count;
     }
 
     public static string[] Colors()
@@ -30,6 +30,11 @@ public static class ResistorColor
         }
         var colorArray = colors.ToArray();
         return colorArray;
+    }
+
+    public static List<string> GetColorsAsString()
+    {
+        return Enum.GetNames(typeof(Color)).ToList();
     }
 
 }
