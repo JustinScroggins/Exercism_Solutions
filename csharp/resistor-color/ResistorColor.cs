@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public static class ResistorColor
 {
@@ -6,14 +7,25 @@ public static class ResistorColor
     public static int ColorCode(string color)
     {
         color = color.ToLower();
-        foreach (char typeName in Enum.GetValues(typeof(Color)))
+        foreach (int colorNumber in Enum.GetValues(typeof(Color)))
         {
-
+            if (color == colorNumber.ToString())
+            {
+                return colorNumber;
+            }
         }
+        return 0;
     }
 
     public static string[] Colors()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        foreach (string colorName in Enum.GetValues(typeof(Color)))
+        {
+            List<string> colors = new List<string>();
+            colors.Add(colorName);
+            var colorArray = colors.ToArray();
+            return colorArray;
+        }
+        return null;
     }
 }
