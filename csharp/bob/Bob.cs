@@ -16,7 +16,7 @@ public static class Bob
             {
                 return "Sure.";
             }
-            else if (statement == statement.ToUpper())
+            else if (statement.Any(c => char.IsUpper(c)))
             {
                 return "Whoa, chill out!";
             }
@@ -24,7 +24,7 @@ public static class Bob
             {
                 return "Calm down, I know what I'm doing!";
             }
-            else (statement.Contains(""))
+            else statement.Contains("");
             {
                 return "Fine. Be that way!";
             }
