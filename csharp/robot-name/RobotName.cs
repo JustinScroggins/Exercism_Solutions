@@ -1,13 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 public class Robot
 {
-    Random random = new Random();
     public Robot()
     {
-        _name = this.RandomString();
+        Name = NextName();
     }
 
     private string _name;
@@ -15,24 +16,26 @@ public class Robot
     public string Name
     {
         get { return _name; }
-        set { Name = value; }
+        set { _name = value; }
     }
 
 
     public void Reset()
     {
-        _name = "";
+        Name = NextName();
     }
 
-    private string RandomString()
-    {
-        Random rand = new Random();
-        int nums = random.Next(000, 1000);
-        var val = nums.ToString("000");
-        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        string letters = new string(Enumerable.Repeat(chars, 2)
-            .Select(s => s[random.Next(s.Length)]).ToArray());
-        string name = $"{letters}{val}";
-        return name;
-    }
+
+    static string[] Names = Enumerable
+      .Range(0, 26 * 26)
+      .SelectMany(letters => Enumerable
+         .Range(0, 1000)
+         .Select(i => $"{(char)('A' + letters / 26)}{(char)('A' + letters % 26)}{i:000}"))
+      .OrderBy(item => Guid.NewGuid())
+      .ToArray();
+
+    static int currentIndex = -1;
+
+    static string NextName() =>
+      Names[Interlocked.Increment(ref currentIndex) % Names.Length];
 }
