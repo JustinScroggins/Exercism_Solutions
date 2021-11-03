@@ -9,10 +9,15 @@ public static class Bob
     {
         bool HasDigits = statement.All(char.IsDigit);
         statement = statement.TrimEnd();
+        statement = statement.TrimStart();
         statement = statement.Trim('\n', '\r', '\t');
         if (!HasDigits)
         {
-            if (statement.EndsWith('?'))
+            if (statement == statement.ToUpper() && statement.EndsWith('?'))
+            {
+                return "Calm down, I know what I'm doing!";
+            }
+            else if (statement.EndsWith('?'))
             {
                 return "Sure.";
             }
@@ -20,19 +25,12 @@ public static class Bob
             {
                 return "Whoa, chill out!";
             }
-            else if (statement == statement.ToUpper() && statement.EndsWith('?'))
-            {
-                return "Calm down, I know what I'm doing!";
-            }
-            else statement.Contains("");
-            {
-                return "Fine. Be that way!";
-            }
+            return "test";
         }
-        else
+        if (statement.Contains(""))
         {
-            return "Whatever.";
+            return "Fine. Be that way!";
         }
-
+        else return "Whatever.";
     }
 }
