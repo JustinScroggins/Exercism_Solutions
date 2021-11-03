@@ -19,6 +19,10 @@ public static class PhoneNumber
             }
             return (true, false, lastFour);
         }
+        if (secondDigits == fakeNumber)
+        {
+            return (false, true, lastFour);
+        }
         return (false, false, lastFour);
     }
 
