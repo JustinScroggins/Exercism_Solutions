@@ -15,7 +15,7 @@ public static class PhoneNumber
         {
             if (secondDigits == fakeNumber)
             {
-                return (true, true, phoneNumber);
+                return (true, true, lastFour);
             }
             return (true, false, lastFour);
         }
